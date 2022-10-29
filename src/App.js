@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import NotFound from './Pages/Shared/NotFound';
 import StreetPhotography from './Pages/StreetPhotography/StreetPhotography';
 import Footer from './Pages/Shared/Footer';
+import DocumentaryPhotography from './Pages/DocumentaryPhotography/DocumentaryPhotography';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/streetPhotography' element={<StreetPhotography />} />
+        <Route path='/documentaryPhotography' element={<DocumentaryPhotography />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

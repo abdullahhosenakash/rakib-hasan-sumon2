@@ -14,7 +14,7 @@ const StreetPhotography = () => {
     }
     return (
         <div>
-            <PageTitle title={'Street Photography'} />
+            <PageTitle title={'Street Photography - RH Sumon'} />
             <div className='row row-cols-lg-4 row-cols-1 gx-0 header-margin'>
                 {
                     streetPhotos.map(photo => <Photo photo={photo.img} key={photo.id} />)
