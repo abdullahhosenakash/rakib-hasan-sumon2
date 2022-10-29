@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className='row row-cols-lg-4 row-cols-sm-1 gx-0'>
             {
-                photos.map(photo => <Photo photo={photo.img} alt='' />)
+                photos.map(photo => <Photo key={photo.id} photo={photo.img} alt='' />)
             }
         </div>
     );

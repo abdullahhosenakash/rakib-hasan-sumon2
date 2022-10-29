@@ -7,11 +7,12 @@ import logo from '../../Assets/logo2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import './Shared.css';
 
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='fixed-top'>
             <Container>
                 <Navbar.Brand as={Link} to='/'><img src={logo} alt="" srcSet="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
