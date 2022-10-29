@@ -1,6 +1,7 @@
 import React from 'react';
 import usePhotos from '../../hooks/usePhotos';
 import Photo from '../Photo/Photo';
+import PageTitle from '../Shared/PageTitle';
 
 const StreetPhotography = () => {
     const [photos] = usePhotos();
@@ -12,10 +13,13 @@ const StreetPhotography = () => {
         }
     }
     return (
-        <div className='row row-cols-lg-4 row-cols-1 gx-0 header-margin'>
-            {
-                streetPhotos.map(photo => <Photo photo={photo.img} key={photo.id} />)
-            }
+        <div>
+            <PageTitle title={'Street Photography'} />
+            <div className='row row-cols-lg-4 row-cols-1 gx-0 header-margin'>
+                {
+                    streetPhotos.map(photo => <Photo photo={photo.img} key={photo.id} />)
+                }
+            </div>
         </div>
     );
 };
