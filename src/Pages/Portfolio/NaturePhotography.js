@@ -1,13 +1,17 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import usePhotos from '../../hooks/usePhotos';
 import Photo from '../Photo/Photo';
 import PageTitle from '../Shared/PageTitle';
 
-const DocumentaryPhotography = () => {
-    const [photos] = usePhotos();
+const NaturePhotography = () => {
+    const [photos, isLoading] = usePhotos();
+    if (isLoading) {
+        return <Spinner className='spinner' animation="border" />;
+    }
     let documentaryPhotos = [];
     if (photos.length) {
-        documentaryPhotos = [photos[photos.length - 1]];
+        documentaryPhotos = [photos[photos.length - 2]];
         for (let i = 0; i < photos.length; i += 2) {
             documentaryPhotos = [...documentaryPhotos, photos[i]];
         }
@@ -18,10 +22,9 @@ const DocumentaryPhotography = () => {
             documentaryPhotos = [...documentaryPhotos, photos[i]];
         }
     }
-    console.log(documentaryPhotos)
     return (
         <div>
-            <PageTitle title={'Documentary Photography - RH Sumon'} />
+            <PageTitle title={'Nature Photography - RH Sumon'} />
             <div className='row row-cols-lg-4 row-cols-1 gx-0 header-margin'>
                 {
                     documentaryPhotos.map(photo => <Photo photo={photo.img} key={photo.id} />)
@@ -31,4 +34,4 @@ const DocumentaryPhotography = () => {
     );
 };
 
-export default DocumentaryPhotography;
+export default NaturePhotography;

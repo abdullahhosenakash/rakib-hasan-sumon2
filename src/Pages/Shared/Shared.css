@@ -1,3 +1,9 @@
 .header-margin {
     margin-top: 84px !important;
 }
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../Assets/logo2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Shared.css';
 
 
@@ -19,7 +19,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Portfolio" id="collasible-nav-dropdown">
-                            <NavDropdown.Item as={Link} to='/streetPhotography'>Street Photography</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/streetPhotography' >Street Photography</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to='/documentaryPhotography'>
                                 Documentary Photography
                             </NavDropdown.Item>

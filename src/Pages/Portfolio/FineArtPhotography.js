@@ -1,10 +1,14 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import usePhotos from '../../hooks/usePhotos';
 import Photo from '../Photo/Photo';
 import PageTitle from '../Shared/PageTitle';
 
-const StreetPhotography = () => {
-    const [photos] = usePhotos();
+const FineArtPhotography = () => {
+    const [photos, isLoading] = usePhotos();
+    if (isLoading) {
+        return <Spinner className='spinner' animation="border" />;
+    }
     let streetPhotos = [];
     if (photos.length) {
         streetPhotos = [photos[photos.length - 1]];
@@ -14,7 +18,7 @@ const StreetPhotography = () => {
     }
     return (
         <div>
-            <PageTitle title={'Street Photography - RH Sumon'} />
+            <PageTitle title={'Fine Art Photography - RH Sumon'} />
             <div className='row row-cols-lg-4 row-cols-1 gx-0 header-margin'>
                 {
                     streetPhotos.map(photo => <Photo photo={photo.img} key={photo.id} />)
@@ -24,4 +28,4 @@ const StreetPhotography = () => {
     );
 };
 
-export default StreetPhotography;
+export default FineArtPhotography;
